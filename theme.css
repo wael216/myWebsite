@@ -1,0 +1,9 @@
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-gap: 20px; /* space between grid items */
+}
+
+.blog-post {
+  /* styling for each blog post */
+}
