@@ -28,6 +28,22 @@
     <p>Post Excerpt 3</p>
   </div>
   <!-- more blog posts -->
+      
+      <div id="medium-feed"></div>
+
+<script>
+  const parser = new RSSParser();
+  parser.parseURL('https://medium.com/feed/@med.wael.thabet', (err, feed) => {
+    if (err) throw err;
+    console.log(feed.title);
+    let html = "";
+    feed.items.forEach(item => {
+      html += `<h2><a href="${item.link}">${item.title}</a></h2>`;
+      html += `<p>${item.contentSnippet}</p>`;
+    });
+    document.getElementById("medium-feed").innerHTML = html;
+  });
+</script>
 </div>
 
   </body>
