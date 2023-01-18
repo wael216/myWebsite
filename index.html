@@ -2,81 +2,27 @@
 <html>
   <head>
     <title>My Tree Blog</title>
-    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <style>
-      /* Style the thumb up icon */
-      .like-button {
-        display: inline-block;
-        font-size: 0;
-        width: 50px;
-        height: 50px;
-        background-color: #ccc;
-        border-radius: 50%;
-        position: relative;
-        margin-right: 10px;
-      }
-      /* Style the thumb up icon */
-      .like-button::before {
-        content: '';
-        display: block;
-        width: 20px;
-        height: 40px;
-        position: absolute;
-        top: 10px;
-        left: 15px;
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-        border-left: 12px solid #fff;
-        transform: rotate(45deg);
-      }
-      /* Style the thumb up icon */
-      .like-button::after {
-        content: '';
-        display: block;
-        width: 15px;
-        height: 15px;
-        position: absolute;
-        top: 22px;
-        left: 25px;
-        border-radius: 50%;
-        background-color: #fff;
-      }
-      /* Style the likes counter */
-      .likes {
-        font-size: 20px;
-        color: #333;
-        vertical-align: middle;
-      }
-    </style>
   </head>
   <body>
     <div id="root"></div>
+    <div class="blog-grid">
+  <div class="blog-post">
+    <img src="post-image-1.jpg" alt="Post Image 1">
+    <h2>Post Title 1</h2>
+    <p>Post Excerpt 1</p>
+  </div>
+  <div class="blog-post">
+    <img src="post-image-2.jpg" alt="Post Image 2">
+    <h2>Post Title 2</h2>
+    <p>Post Excerpt 2</p>
+  </div>
+  <div class="blog-post">
+    <img src="post-image-3.jpg" alt="Post Image 3">
+    <h2>Post Title 3</h2>
+    <p>Post Excerpt 3</p>
+  </div>
+  <!-- more blog posts -->
+</div>
 
-    <script type="text/babel">
-      class LikeButton extends React.Component {
-        constructor(props) {
-          super(props);
-          this.state = { likes: 0 };
-        }
-
-        incrementLikes() {
-          this.setState({ likes: this.state.likes + 1 });
-        }
-
-        render() {
-          return (
-            <div>
-              <button className="like-button" onClick={() => this.incrementLikes()}>
-                <span className="likes">{this.state.likes}</span>
-              </button>
-            </div>
-          );
-        }
-      }
-
-      ReactDOM.render(<LikeButton />, document.getElementById("root"));
-    </script>
   </body>
 </html>
